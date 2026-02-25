@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wick Cooks — Presentation Packet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background: #F5F0E6;
+    color: #2A1A0E;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  :root {
+    --brown-dark: #3B2314;
+    --brown-med: #6B4226;
+    --brown-light: #8B6842;
+    --gold: #C9A84C;
+    --gold-light: #D4BC6A;
+    --gold-dim: #A08832;
+    --cream: #F5F0E6;
+    --cream-dark: #E8E0D0;
+    --white: #FFFFFF;
+    --text: #2A1A0E;
+    --text-light: #5A4A3E;
+    --border: rgba(107,66,38,0.15);
+  }
+
+  .packet {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+  }
+
+  /* ── Hero / Title Page ── */
+  .hero {
+    background: var(--brown-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 32px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero .overline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 5px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  /* WICK COOKS Logo */
+  .logo-block {
+    display: block;
+    margin-bottom: 28px;
+    text-align: left;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 44px);
+    grid-template-rows: repeat(4, 44px);
+    gap: 0;
+  }
+  .logo-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    width: 44px;
+    height: 44px;
+  }
+  .logo-cell.dim { color: rgba(201,168,76,0.0); }
+  .logo-cell.cooks { color: var(--cream); font-size: 28px; letter-spacing: 2px; }
+  .logo-blurb {
+    margin-top: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(245,240,230,0.7);
+    line-height: 1.6;
+    max-width: 400px;
+  }
+
+  .hero .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .hero .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: #8a7a6a;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero .badge {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 6px 18px; border-radius: 3px;
+  }
+
+  /* ── Content ── */
+  .content { padding: 0 40px 40px; }
+
+  @media (max-width: 600px) {
+    .content { padding: 0 20px 32px; }
+    .hero { padding: 40px 20px 36px; }
+  }
+
+  /* ── Section Dividers ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 40px 0 20px;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: var(--gold); opacity: 0.3;
+  }
+  .section-divider span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--brown-light);
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 12px; line-height: 1.3;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--brown-med);
+    margin: 24px 0 10px;
+  }
+  p { margin-bottom: 14px; color: var(--text-light); }
+  strong { color: var(--brown-dark); }
+
+  /* ── Stat Banner ── */
+  .stat-banner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+  .stat-cell {
+    background: var(--brown-dark);
+    text-align: center;
+    padding: 18px 8px;
+  }
+  .stat-cell .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--gold); line-height: 1.2;
+  }
+  .stat-cell .label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #8a7a6a;
+    margin-top: 4px;
+  }
+
+  /* ── Mock Covers ── */
+  .covers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .cover-card {
+    perspective: 800px;
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    transition: transform 0.3s;
+  }
+  .cover-card:hover {
+    transform: scale(1.03);
+  }
+  .cover-book {
+    position: relative;
+    transform: rotateY(-8deg);
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+  }
+  .cover-card:hover .cover-book {
+    transform: rotateY(-3deg);
+  }
+  .cover-face {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    text-align: center;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 6px 6px 18px rgba(0,0,0,0.25), 1px 1px 4px rgba(0,0,0,0.15);
+  }
+  /* Wire-O spiral binding */
+  .wire-binding {
+    position: absolute;
+    left: -10px; top: 6px;
+    width: 20px;
+    height: calc(100% - 12px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 5;
+    padding: 4px 0;
+  }
+  .wire-loop {
+    width: 18px;
+    height: 14px;
+    border: 2.5px solid #555;
+    border-right: none;
+    border-radius: 50% 0 0 50%;
+    background: transparent;
+    box-shadow: -1px 0 2px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+  }
+  .cover-face::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 10px; height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.03) 100%);
+    border-radius: 3px 0 0 3px;
+    z-index: 3;
+  }
+  /* Page edge effect on the right */
+  .cover-face::after {
+    content: '';
+    position: absolute;
+    right: -6px; top: 4px;
+    width: 6px; height: calc(100% - 8px);
+    background: linear-gradient(90deg, #E8E0D0, #F0EBE0, #E0D8C8);
+    border-radius: 0 2px 2px 0;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  /* Bottom page edge */
+  .cover-bottom-edge {
+    position: absolute;
+    bottom: -5px; left: 4px;
+    width: calc(100% - 2px); height: 5px;
+    background: linear-gradient(180deg, #E0D8C8, #D8D0C0);
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .cover-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    background: var(--cream);
+    color: var(--brown-med);
+    font-weight: 600;
+  }
+
+  /* Cover A: Martha Stewart */
+  .cover-martha {
+    background: #FAFAF5;
+    border: 1px solid #E0DDD0;
+  }
+  .cover-martha .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: #3B3B2E; letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cover-martha .cover-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; letter-spacing: 4px;
+    text-transform: uppercase; color: #8a8a7a;
+  }
+  .cover-martha .cover-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; color: #6B6B5E;
+    margin-top: 20px; font-style: italic;
+  }
+  .cover-martha .line-accent {
+    width: 40px; height: 1px; background: #C9A84C;
+    margin: 14px auto;
+  }
+  .cover-martha .emblem-circle {
+    width: 50px; height: 50px; border-radius: 50%;
+    border: 1.5px solid #C9A84C; margin: 16px auto 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem; color: #C9A84C; font-weight: 600;
+  }
+
+  /* Cover B: Backyard Barbecue */
+  .cover-bbq {
+    background: linear-gradient(170deg, #5C3D1E 0%, #3B2314 100%);
+  }
+  .cover-bbq .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: #F5E6C8; line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .cover-bbq .cover-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; letter-spacing: 3px;
+    text-transform: uppercase; color: #C9A84C;
+  }
+  .cover-bbq .divider-line {
+    width: 60px; height: 2px; background: #C9A84C;
+    margin: 14px auto;
+  }
+  .cover-bbq .year-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    color: #3B2314; background: #C9A84C;
+    padding: 4px 14px; border-radius: 3px;
+    margin-top: 12px; letter-spacing: 2px;
+  }
+  .cover-bbq .emblem-circle {
+    width: 45px; height: 45px; border-radius: 50%;
+    border: 1.5px solid rgba(201,168,76,0.5); margin-top: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.6rem; color: #C9A84C; font-weight: 600;
+  }
+
+  /* Cover C: Elegant Upscale */
+  .cover-elegant {
+    background: linear-gradient(180deg, #1A1008 0%, #0D0904 100%);
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .cover-elegant .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: #C9A84C; letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cover-elegant .cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; font-style: italic;
+    color: #8A7A5E;
+  }
+  .cover-elegant .gold-line {
+    width: 80px; height: 1px; background: #C9A84C;
+    margin: 16px auto;
+  }
+  .cover-elegant .year-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; letter-spacing: 5px;
+    color: #C9A84C; text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .cover-elegant .emblem-wrap {
+    margin-top: 0px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1.5px solid #C9A84C;
+    padding: 3px;
+    line-height: 0;
+  }
+  .cover-elegant .emblem-img {
+    width: 54px; height: 54px; border-radius: 50%;
+    object-fit: cover;
+    filter: saturate(0) brightness(1.1) contrast(1.8);
+    display: block;
+  }
+  .cover-elegant .emblem-circle-UNUSED {
+    width: 55px; height: 55px; border-radius: 50%;
+    border: 1px solid #C9A84C; margin-top: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem; color: #C9A84C; font-weight: 600;
+  }
+
+  /* Cover D: Cozy / Home */
+  .cover-chrissy {
+    background: #F8E8D0;
+    border: 1px solid #E8D4B4;
+  }
+  .cover-chrissy .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--brown-dark); line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .cover-chrissy .cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: var(--brown-med);
+  }
+  .cover-chrissy .fun-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white); background: var(--brown-dark);
+    padding: 4px 12px; border-radius: 20px;
+    margin-top: 14px;
+  }
+  .cover-chrissy .emblem-circle {
+    width: 45px; height: 45px; border-radius: 50%;
+    border: 2px solid var(--brown-dark); margin-top: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.65rem; color: var(--brown-dark); font-weight: 600;
+  }
+
+  /* Cover E: Family Heritage */
+  .cover-heritage {
+    background: linear-gradient(180deg, #F5F0E6 0%, #E0D8C4 100%);
+    border: 1px solid #C9B896;
+  }
+  .cover-heritage .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight: 600;
+    color: var(--brown-dark);
+    margin-bottom: 8px;
+  }
+  .cover-heritage .cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; color: var(--brown-light);
+    font-style: italic;
+  }
+  .cover-heritage .crest-box {
+    width: 60px; height: 60px; border-radius: 50%;
+    border: 2px solid var(--gold);
+    margin: 16px auto;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem; color: var(--gold); font-weight: 700;
+  }
+  .cover-heritage .bottom-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--brown-light);
+    margin-top: 8px;
+  }
+
+  /* ── Pricing Cards ── */
+  .price-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 500px) {
+    .price-cards { grid-template-columns: 1fr; }
+  }
+  .price-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    background: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--gold);
+  }
+  .price-card .card-type {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold-dim);
+    font-weight: 600; margin-bottom: 6px;
+  }
+  .price-card .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--brown-dark); margin-bottom: 4px;
+  }
+  .price-card .card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--gold); margin: 8px 0;
+  }
+  .price-card .card-desc {
+    font-size: 0.85rem; color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* ── Tables ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  thead th {
+    text-align: left;
+    padding: 12px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cream);
+    background: var(--brown-dark);
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(201,168,76,0.04); }
+  td.cost { color: var(--gold-dim); font-weight: 700; white-space: nowrap; }
+  td.highlight { background: rgba(201,168,76,0.08); }
+
+  /* ── Callout Box ── */
+  .callout {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .callout strong { color: var(--brown-dark); }
+
+  /* ── Timeline ── */
+  .timeline {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+  }
+  .timeline li {
+    position: relative;
+    padding: 20px 0 20px 70px;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .step-icon {
+    position: absolute;
+    left: 0; top: 20px;
+    width: 48px; height: 48px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 1px;
+  }
+  .timeline .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--brown-dark); margin-bottom: 4px;
+  }
+  .timeline .step-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 600;
+    color: var(--gold); letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline .step-desc {
+    font-size: 0.88rem; color: var(--text-light); line-height: 1.5;
+  }
+
+  /* ── Impact Tiers ── */
+  .tier-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .tier-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+  .tier-card.tier-bronze::before { background: #CD7F32; }
+  .tier-card.tier-silver::before { background: #A0A0A0; }
+  .tier-card.tier-gold::before { background: var(--gold); }
+  .tier-card .tier-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 3px;
+    display: inline-block; margin-bottom: 6px;
+  }
+  .tier-bronze .tier-label { background: rgba(205,127,50,0.12); color: #CD7F32; }
+  .tier-silver .tier-label { background: rgba(160,160,160,0.12); color: #707070; }
+  .tier-gold .tier-label { background: rgba(201,168,76,0.12); color: var(--gold-dim); }
+  .tier-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--brown-dark); margin-bottom: 4px;
+  }
+  .tier-card p { font-size: 0.88rem; margin-bottom: 0; }
+
+  /* ── Dedication ── */
+  .dedication-box {
+    background: var(--brown-dark);
+    border-radius: 10px;
+    padding: 32px;
+    margin: 24px 0;
+    text-align: center;
+    color: var(--cream);
+  }
+  .dedication-box .ded-overline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .dedication-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--cream); margin-bottom: 12px;
+  }
+  .dedication-box .ded-line {
+    width: 40px; height: 1px; background: var(--gold);
+    margin: 14px auto;
+  }
+  .dedication-box p {
+    color: #A09080;
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto 12px;
+    line-height: 1.7;
+  }
+
+  /* ── Printer List ── */
+  .printer-list {
+    list-style: none;
+    margin: 20px 0;
+    counter-reset: printer;
+  }
+  .printer-list li {
+    counter-increment: printer;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px 16px 58px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .printer-list li::before {
+    content: counter(printer);
+    position: absolute;
+    left: 16px; top: 16px;
+    width: 30px; height: 30px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 700; color: var(--gold);
+  }
+  .printer-list .printer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--brown-dark);
+  }
+  .printer-list .printer-detail {
+    font-size: 0.82rem; color: var(--text-light); margin-top: 2px;
+  }
+
+  /* ── Book Specs ── */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .spec-item {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .spec-item .spec-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold-dim); margin-bottom: 4px;
+  }
+  .spec-item .spec-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; font-weight: 600;
+    color: var(--brown-dark); line-height: 1.3;
+  }
+
+  /* ── Footer ── */
+  .packet-footer {
+    background: var(--brown-dark);
+    text-align: center;
+    padding: 28px 32px;
+  }
+  .packet-footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .packet-footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; color: #6a5a4a;
+    letter-spacing: 1px; margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .stat-banner { grid-template-columns: repeat(2, 1fr); }
+    .covers-grid { grid-template-columns: 1fr 1fr; }
+    .cover-face { height: 240px; padding: 16px; }
+    .price-cards { grid-template-columns: 1fr; }
+    h2 { font-size: 1.3rem; }
+    .logo-grid { grid-template-columns: repeat(5, 34px); grid-template-rows: repeat(4, 34px); }
+    .logo-cell { font-size: 24px; width: 34px; height: 34px; }
+    .logo-cell.cooks { font-size: 22px; }
+    .logo-block { max-width: 300px; }
+  }
+
+  @media print {
+    .packet { box-shadow: none; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="packet">
+
+<!-- ═══════════════════ HERO / TITLE PAGE ═══════════════════ -->
+<div class="hero">
+  <div class="overline">Brunswick School &middot; Class of 2015</div>
+
+  <!-- WICK COOKS Logo -->
+  <div class="logo-block">
+    <div class="logo-grid">
+      <!-- Row 1: W in column 1 -->
+      <div class="logo-cell">W</div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <!-- Row 2: I in column 1 -->
+      <div class="logo-cell">I</div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <!-- Row 3: C O O K S across — C aligns with W/I/K above and below -->
+      <div class="logo-cell cooks">C</div>
+      <div class="logo-cell cooks">O</div>
+      <div class="logo-cell cooks">O</div>
+      <div class="logo-cell cooks">K</div>
+      <div class="logo-cell cooks">S</div>
+      <!-- Row 4: K in column 1 -->
+      <div class="logo-cell">K</div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+      <div class="logo-cell dim"></div>
+    </div>
+    <div class="logo-blurb">These are the recipes we grew up on and the things that brought us all around the table. 93 families, but one table.</div>
+  </div>
+
+  <div style="text-align:center;">
+    <div class="tagline">A Cookbook Fundraiser for the Ages</div>
+    <div class="subtitle">Conceived by Lynn May &amp; Faten Hindy &nbsp;&bull;&nbsp; With the aid of their sons</div>
+    <span class="badge">Presentation Packet &mdash; February 2026</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══════════════ STATS ═══════════════ -->
+  <div class="stat-banner">
+    <div class="stat-cell">
+      <div class="number">93</div>
+      <div class="label">Families</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">2015</div>
+      <div class="label">Class Year</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">$25&ndash;$50</div>
+      <div class="label">Per Page</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">Spring</div>
+      <div class="label">Target</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ THE VISION ═══════════════ -->
+  <div class="section-divider"><span>The Vision</span></div>
+
+  <h2>Breaking Bread, Building Legacy</h2>
+  <p>The Brunswick School Class of 2015 has always found its way back to the table. From class snacks in lower school to the snack bar in middle school. From food fairs and fundraisers to team dinners and the warmth of a friend's kitchen after practice. Our class found something rare in a world that moves too fast &mdash; <strong>we slowed down to eat together</strong>.</p>
+  <p><strong>Wick Cooks</strong> turns that tradition into something permanent: a hardcover, coffee-table-quality cookbook featuring the family recipes of all 93 graduating families. Each family contributes their signature dishes &mdash; <em>Hindy Family Flank Steak, May Lemon Bars</em> &mdash; alongside dedication pages that tell the stories behind the food: when it was most enjoyed, why it matters, and who it reminds them of.</p>
+  <p>This is not just a cookbook. It is a fundraiser for Brunswick, a reunion of flavors, and a lasting tribute to the people who shaped our class.</p>
+
+  <div class="callout">
+    <strong>The Team:</strong> Lynn May &amp; Faten Hindy (co-founders &amp; project leads), with the aid of their sons &mdash; Sam (design &amp; mock-ups) and Matt (alumni connections &amp; outreach).
+  </div>
+
+  <!-- ═══════════════ MOCK COVERS ═══════════════ -->
+  <div class="section-divider"><span>Cover Concepts</span></div>
+
+  <h2>Five Directions for the Cover</h2>
+  <p>Each concept captures a different energy &mdash; from the polished restraint of a Martha Stewart title to the warm irreverence of a Cozy / Home spread. All feature the Wick Cooks mark and the Brunswick emblem. The final cover will be chosen by the team.</p>
+
+  <div class="covers-grid">
+
+    <!-- Cover A: Martha Stewart -->
+    <div class="cover-card">
+      <div class="cover-book"><div class="cover-face cover-martha"><div class="cover-bottom-edge"></div>
+        <div class="wire-binding"><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div></div>
+        <div class="cover-sub">Brunswick School &middot; Class of 2015</div>
+        <div class="line-accent"></div>
+        <div class="cover-title">Wick Cooks</div>
+        <div class="cover-logo">Family Recipes &amp; Dedications</div>
+        <img src="Brunswick%20School%20Emblem.png" alt="Brunswick School Emblem" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-top:12px;">
+      </div></div>
+      <div class="cover-label">A &mdash; Martha Stewart</div>
+    </div>
+
+    <!-- Cover B: Backyard Barbecue -->
+    <div class="cover-card">
+      <div class="cover-book"><div class="cover-face cover-bbq"><div class="cover-bottom-edge"></div>
+        <div class="wire-binding"><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div></div>
+        <div class="cover-sub">From Our Tables to Yours</div>
+        <div class="divider-line"></div>
+        <div class="cover-title">Wick<br>Cooks</div>
+        <div class="year-badge">CLASS OF 2015</div>
+        <img src="Brunswick%20School%20Emblem.png" alt="Brunswick School Emblem" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-top:12px;">
+      </div></div>
+      <div class="cover-label">B &mdash; Backyard Barbecue</div>
+    </div>
+
+    <!-- Cover C: Elegant Upscale -->
+    <div class="cover-card">
+      <div class="cover-book"><div class="cover-face cover-elegant"><div class="cover-bottom-edge"></div>
+        <div class="wire-binding"><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div></div>
+        <div class="year-text">Brunswick School</div>
+        <div class="gold-line" style="margin: 10px auto;"></div>
+        <div class="cover-title" style="margin-bottom: 4px;">Wick Cooks</div>
+        <div class="cover-sub">Ninety-Three Families. One Table.</div>
+        <div class="emblem-wrap">
+          <img src="Brunswick%20School%20Emblem.png" alt="Brunswick School Emblem" class="emblem-img">
+        </div>
+      </div></div>
+      <div class="cover-label">C &mdash; Elegant Upscale</div>
+    </div>
+
+    <!-- Cover D: Cozy / Home -->
+    <div class="cover-card">
+      <div class="cover-book"><div class="cover-face cover-chrissy"><div class="cover-bottom-edge"></div>
+        <div class="wire-binding"><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div></div>
+        <div class="cover-title">Wick<br>Cooks</div>
+        <div class="cover-sub">the recipes we grew up on</div>
+        <div class="fun-tag">Brunswick &middot; Class of 2015</div>
+        <img src="Brunswick%20School%20Emblem.png" alt="Brunswick School Emblem" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-top:12px;">
+      </div></div>
+      <div class="cover-label">D &mdash; Cozy / Home Style</div>
+    </div>
+
+    <!-- Cover E: Family Heritage -->
+    <div class="cover-card">
+      <div class="cover-book"><div class="cover-face cover-heritage"><div class="cover-bottom-edge"></div>
+        <div class="wire-binding"><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div><div class="wire-loop"></div></div>
+        <img src="Brunswick%20School%20Emblem.png" alt="Brunswick School Emblem" style="width:60px; height:60px; border-radius:50%; object-fit:cover; margin:12px auto;">
+        <div class="cover-title">Wick Cooks</div>
+        <div class="cover-sub">A Collection of Family Recipes<br>Class of 2015</div>
+        <div class="bottom-text">Brunswick School &middot; Greenwich</div>
+      </div></div>
+      <div class="cover-label">E &mdash; Family Heritage</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ BOOK SPECIFICATIONS ═══════════════ -->
+  <div class="section-divider"><span>Book Specifications</span></div>
+
+  <h2>A Book Built for the Kitchen and the Living Room</h2>
+  <p>Wick Cooks is designed to hold up on a kitchen counter and look beautiful on a coffee table. The physical quality is modeled after the classic Brunswick address directory &mdash; with the school emblem centered in the interior &mdash; but elevated with modern cookbook finishes.</p>
+
+  <div class="specs-grid">
+    <div class="spec-item">
+      <div class="spec-label">Binding</div>
+      <div class="spec-value">Double-O Wire</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Cover</div>
+      <div class="spec-value">Laminated Hardcover</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Pages</div>
+      <div class="spec-value">Glossy Coated Stock</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Trim Size</div>
+      <div class="spec-value">8.5&Prime; &times; 11&Prime;</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Color</div>
+      <div class="spec-value">Full Color Interior</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Palette</div>
+      <div class="spec-value">Brown, White, Gold</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The Brunswick emblem</strong> will be featured at the center of the book, echoing the beloved address directory tradition. The entire interior will carry a cohesive design language &mdash; neutral tones with gold accents &mdash; making each recipe and dedication page feel part of one unified volume.
+  </div>
+
+  <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+  <div class="section-divider"><span>How It Works</span></div>
+
+  <h2>Two Types of Pages, One Beautiful Book</h2>
+  <p>Each of the 93 families is invited to contribute recipes and dedications. Families may purchase as few or as many pages as they wish. This model raises funds through the page contributions themselves, with additional revenue from book sales.</p>
+
+  <div class="price-cards">
+    <div class="price-card">
+      <div class="card-type">Page Type A</div>
+      <div class="card-name">Recipe Page</div>
+      <div class="card-price">$25 &ndash; $35</div>
+      <div class="card-desc">A full page featuring a family recipe with a title like <em>&ldquo;Hindy Family Flank Steak&rdquo;</em> or <em>&ldquo;May Lemon Bars.&rdquo;</em> Includes the recipe, a family photo or food image, and the family name.</div>
+    </div>
+    <div class="price-card">
+      <div class="card-type">Page Type B</div>
+      <div class="card-name">Dedication Page</div>
+      <div class="card-price">$50</div>
+      <div class="card-desc">A personal page with a write-up, photos (old or new), and a story about the dish, when it was most enjoyed, or a tribute to what the meal means to the family. A keepsake.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Expected range per family:</strong> 1&ndash;3 recipe pages + 1&ndash;2 dedication pages. This gives each family a total contribution of <strong>$25&ndash;$205</strong>, keeping participation accessible while allowing those who want to contribute more a way to do so.
+  </div>
+
+  <!-- ═══════════════ COST ANALYSIS ═══════════════ -->
+  <div class="section-divider"><span>Production Costs</span></div>
+
+  <h2>What It Costs to Print This Book</h2>
+  <p>The cost to produce each copy depends on two variables: <strong>how many pages</strong> the final book contains (driven by family participation) and <strong>how many copies</strong> are printed. Below are estimates for a hardcover, Wire-O bound, full-color, glossy-page cookbook at 8.5&Prime;&times;11&Prime;.</p>
+
+  <h3>How Page Count Is Estimated</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Assumption</th>
+          <th>Low End</th>
+          <th>High End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Recipe pages (93 families &times; 1&ndash;3 each)</td>
+          <td>93 pages</td>
+          <td>279 pages</td>
+        </tr>
+        <tr>
+          <td>Dedication pages (93 families &times; 1&ndash;2 each)</td>
+          <td>93 pages</td>
+          <td>186 pages</td>
+        </tr>
+        <tr>
+          <td>Front &amp; back matter, dividers, emblem pages</td>
+          <td>~30 pages</td>
+          <td>~35 pages</td>
+        </tr>
+        <tr>
+          <td><strong>Estimated Total Book Pages</strong></td>
+          <td class="cost"><strong>~216 pages</strong></td>
+          <td class="cost"><strong>~500 pages</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Per-Book Printing Cost</h3>
+  <p>Based on quotes from US-based specialty printers (Gorham Printing, Morris Press, PrintingCenterUSA, and others) for hardcover Wire-O, full-color, coated stock:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page Count</th>
+          <th>100 Copies</th>
+          <th>200 Copies</th>
+          <th>300 Copies</th>
+          <th>500 Copies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>~200 pages</strong></td>
+          <td class="cost">$30&ndash;$45</td>
+          <td class="cost">$25&ndash;$38</td>
+          <td class="cost">$22&ndash;$34</td>
+          <td class="cost highlight">$18&ndash;$28</td>
+        </tr>
+        <tr>
+          <td><strong>~300 pages</strong></td>
+          <td class="cost">$42&ndash;$60</td>
+          <td class="cost">$36&ndash;$52</td>
+          <td class="cost">$32&ndash;$46</td>
+          <td class="cost highlight">$26&ndash;$38</td>
+        </tr>
+        <tr>
+          <td><strong>~400 pages</strong></td>
+          <td class="cost">$54&ndash;$75</td>
+          <td class="cost">$47&ndash;$65</td>
+          <td class="cost">$42&ndash;$58</td>
+          <td class="cost highlight">$34&ndash;$48</td>
+        </tr>
+        <tr>
+          <td><strong>~500 pages</strong></td>
+          <td class="cost">$65&ndash;$90</td>
+          <td class="cost">$56&ndash;$78</td>
+          <td class="cost">$50&ndash;$70</td>
+          <td class="cost highlight">$42&ndash;$58</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Sweet spot:</strong> At <strong>300 copies</strong>, costs drop 25&ndash;35% vs. 100 copies. At <strong>500 copies</strong>, costs drop 35&ndash;40%. A 300-page book at 300 copies costs roughly <strong>$32&ndash;$46 per book</strong> to produce, giving strong margin for a $65&ndash;$85 retail price.
+  </div>
+
+  <h3>Total Print Run Costs</h3>
+  <p>Multiply per-book cost by quantity. These are the total checks you would write to the printer:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page Count</th>
+          <th>100 Copies</th>
+          <th>200 Copies</th>
+          <th>300 Copies</th>
+          <th>500 Copies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>~200 pages</strong></td>
+          <td class="cost">$3,000&ndash;$4,500</td>
+          <td class="cost">$5,000&ndash;$7,600</td>
+          <td class="cost">$6,600&ndash;$10,200</td>
+          <td class="cost">$9,000&ndash;$14,000</td>
+        </tr>
+        <tr>
+          <td><strong>~300 pages</strong></td>
+          <td class="cost">$4,200&ndash;$6,000</td>
+          <td class="cost">$7,200&ndash;$10,400</td>
+          <td class="cost">$9,600&ndash;$13,800</td>
+          <td class="cost">$13,000&ndash;$19,000</td>
+        </tr>
+        <tr>
+          <td><strong>~400 pages</strong></td>
+          <td class="cost">$5,400&ndash;$7,500</td>
+          <td class="cost">$9,400&ndash;$13,000</td>
+          <td class="cost">$12,600&ndash;$17,400</td>
+          <td class="cost">$17,000&ndash;$24,000</td>
+        </tr>
+        <tr>
+          <td><strong>~500 pages</strong></td>
+          <td class="cost">$6,500&ndash;$9,000</td>
+          <td class="cost">$11,200&ndash;$15,600</td>
+          <td class="cost">$15,000&ndash;$21,000</td>
+          <td class="cost">$21,000&ndash;$29,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════ REVENUE PROJECTIONS ═══════════════ -->
+  <div class="section-divider"><span>Revenue Projections</span></div>
+
+  <h2>How Much Could This Raise?</h2>
+
+  <h3>Revenue Source 1: Page Contributions</h3>
+  <p>Funds raised simply from families purchasing their recipe and dedication pages:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Recipes Sold</th>
+          <th>Dedications Sold</th>
+          <th>Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Conservative</strong><br><span style="font-size:0.75rem; color:var(--text-light);">1 recipe @ $25 + 1 dedication @ $50 per family</span></td>
+          <td>93 pages</td>
+          <td>93 pages</td>
+          <td class="cost"><strong>$6,975</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Moderate</strong><br><span style="font-size:0.75rem; color:var(--text-light);">2 recipes @ $30 + 1 dedication @ $50 per family</span></td>
+          <td>186 pages</td>
+          <td>93 pages</td>
+          <td class="cost"><strong>$10,230</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Optimistic</strong><br><span style="font-size:0.75rem; color:var(--text-light);">3 recipes @ $35 + 2 dedications @ $50 per family</span></td>
+          <td>279 pages</td>
+          <td>186 pages</td>
+          <td class="cost"><strong>$19,065</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Revenue Source 2: Book Sales</h3>
+  <p>Additional revenue from selling copies. The 93 participating families receive a <strong>40% discount</strong> on up to 2 copies. Third copy and beyond is full price. Outside sales (alumni, bookstore, fundraisers) are full price.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Retail Price</th>
+          <th>Family Copies (40% off)</th>
+          <th>Outside Sales</th>
+          <th>Book Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Conservative</strong></td>
+          <td>$65</td>
+          <td>130 copies @ $39</td>
+          <td>20 copies @ $65</td>
+          <td class="cost"><strong>$6,370</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Moderate</strong></td>
+          <td>$75</td>
+          <td>150 copies @ $45</td>
+          <td>50 copies @ $75</td>
+          <td class="cost"><strong>$10,500</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Optimistic</strong></td>
+          <td>$85</td>
+          <td>186 copies @ $51</td>
+          <td>100 copies @ $85</td>
+          <td class="cost"><strong>$17,986</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Combined Fundraising Totals</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Page Revenue</th>
+          <th>Book Revenue</th>
+          <th>Print Cost</th>
+          <th style="background:var(--gold-dim); color:var(--brown-dark);">Net Raised</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Conservative</strong></td>
+          <td>$6,975</td>
+          <td>$6,370</td>
+          <td>($6,600)</td>
+          <td class="cost"><strong>$6,745</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Moderate</strong></td>
+          <td>$10,230</td>
+          <td>$10,500</td>
+          <td>($10,400)</td>
+          <td class="cost"><strong>$10,330</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Optimistic</strong></td>
+          <td>$19,065</td>
+          <td>$17,986</td>
+          <td>($15,600)</td>
+          <td class="cost"><strong>$21,451</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════ IMPACT TIERS ═══════════════ -->
+  <div class="section-divider"><span>What the Funds Could Become</span></div>
+
+  <h2>Tiered Impact Goals</h2>
+  <p>Depending on the total amount raised, the fundraiser unlocks different levels of lasting impact for Brunswick:</p>
+
+  <div class="tier-cards">
+    <div class="tier-card tier-bronze">
+      <div class="tier-label">If We Raise $5,000&ndash;$10,000</div>
+      <h4>A Dedication &amp; Equipment Gift</h4>
+      <p>A meaningful contribution to the school &mdash; perhaps a dedicated bench, a piece of equipment for a team, or a named gift to a department that shaped us. Something permanent with a plaque.</p>
+    </div>
+    <div class="tier-card tier-silver">
+      <div class="tier-label">If We Raise $10,000&ndash;$20,000</div>
+      <h4>A Dedication to Tom Phillip</h4>
+      <p>A commissioned statue, portrait, or lasting tribute honoring Tom Phillip &mdash; placed somewhere on the Brunswick campus where future classes can know his name and his spirit.</p>
+    </div>
+    <div class="tier-card tier-gold">
+      <div class="tier-label">If We Raise $20,000+</div>
+      <h4>The Tom Phillip Scholarship</h4>
+      <p>An endowed scholarship in Tom&rsquo;s name, awarded annually to a Brunswick student. <strong>The dream outcome.</strong> If Wick Cooks becomes a template that other graduating classes adopt &mdash; each year running their own fundraising vector &mdash; the scholarship could become self-sustaining and grow over time.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DEDICATION ═══════════════ -->
+  <div class="section-divider"><span>In Memory</span></div>
+
+  <div class="dedication-box">
+    <div class="ded-overline">This Book Is Dedicated To</div>
+    <h3>Tom Phillip</h3>
+    <div class="ded-line"></div>
+    <p>Tom is part of the tapestry that is Brunswick School. His presence has defined our hallways, our fields, and our gatherings. How dearly he will be missed, and how the school will never be the same.</p>
+    <p>Wick Cooks carries his name in its heart. Every recipe shared, every story told, every page turned is a way of honoring the people who make our community what it is &mdash; and the table is always better when everyone has a seat.</p>
+    <p style="color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; margin-top: 16px;">The final book will feature a full dedication page in Tom&rsquo;s honor.</p>
+  </div>
+
+  <!-- ═══════════════ PRINTING PARTNERS ═══════════════ -->
+  <div class="section-divider"><span>Recommended Printers</span></div>
+
+  <h2>Trusted Printing Partners</h2>
+  <p>These companies specialize in short-run, high-quality cookbook and hardcover printing. We recommend requesting quotes from at least three for an apples-to-apples comparison.</p>
+
+  <ol class="printer-list">
+    <li>
+      <div class="printer-name">Gorham Printing</div>
+      <div class="printer-detail">Centralia, WA &nbsp;&bull;&nbsp; gorhamprinting.com &nbsp;&bull;&nbsp; Transparent pricing, Wire-O and hardcover options. In-house US printing. Minimum 25 copies.</div>
+    </li>
+    <li>
+      <div class="printer-name">Morris Press Cookbooks</div>
+      <div class="printer-detail">Kearney, NE &nbsp;&bull;&nbsp; morriscookbooks.com &nbsp;&bull;&nbsp; Nation&rsquo;s largest cookbook printer since 1933. Full-color hardback on 80 lb gloss. Built for fundraisers.</div>
+    </li>
+    <li>
+      <div class="printer-name">PrintingCenterUSA</div>
+      <div class="printer-detail">Great Falls, MT &nbsp;&bull;&nbsp; printingcenterusa.com &nbsp;&bull;&nbsp; Wire-O binding, instant online quote calculator. Digital &amp; offset options.</div>
+    </li>
+    <li>
+      <div class="printer-name">Dazzle Printing</div>
+      <div class="printer-detail">dazzleprinting.com &nbsp;&bull;&nbsp; 25-copy minimum, Wire-O available. 20% off first order + nonprofit discounts. Rush options available.</div>
+    </li>
+    <li>
+      <div class="printer-name">PrintNinja</div>
+      <div class="printer-detail">printninja.com &nbsp;&bull;&nbsp; Offset printing for vibrant color. Known for cookbooks and coffee table books. Competitive at 250+ copies.</div>
+    </li>
+    <li>
+      <div class="printer-name">QinPrinting</div>
+      <div class="printer-detail">qinprinting.com &nbsp;&bull;&nbsp; Wire-O hardcover as a named product. Full-color offset. Online quoting. 2&ndash;3 week production.</div>
+    </li>
+  </ol>
+
+  <div class="callout">
+    <strong>Top recommendation for this project:</strong> Start with <strong>Morris Press Cookbooks</strong> (built specifically for fundraiser cookbooks) and <strong>Gorham Printing</strong> (transparent pricing, high quality). Get a third quote from <strong>PrintingCenterUSA</strong> or <strong>Dazzle</strong> for comparison.
+  </div>
+
+  <!-- ═══════════════ TIMELINE ═══════════════ -->
+  <div class="section-divider"><span>Timeline</span></div>
+
+  <h2>From Launch to Bound Books</h2>
+
+  <ol class="timeline">
+    <li>
+      <div class="step-icon">FEB</div>
+      <div class="step-date">Now &mdash; Early March</div>
+      <div class="step-title">Finalize Packet &amp; Lock Printer</div>
+      <div class="step-desc">Approve this presentation, choose a cover direction, and send specs to 2&ndash;3 printers for final quotes. Lock in the printing partner.</div>
+    </li>
+    <li>
+      <div class="step-icon">MAR</div>
+      <div class="step-date">By Spring Break</div>
+      <div class="step-title">Launch &amp; Notify Families</div>
+      <div class="step-desc">Official announcement to all 93 families. &ldquo;Our class is doing this.&rdquo; Distribute the recipe submission form, the dedication page order form, and the payment link.</div>
+    </li>
+    <li>
+      <div class="step-icon">APR</div>
+      <div class="step-date">By Easter</div>
+      <div class="step-title">Recipes &amp; Registrations Due</div>
+      <div class="step-desc">All recipe submissions, dedication page orders, and ad commitments collected. Design and layout begin immediately after.</div>
+    </li>
+    <li>
+      <div class="step-icon">MAY</div>
+      <div class="step-date">By Graduation</div>
+      <div class="step-title">Books Printed &amp; Delivered</div>
+      <div class="step-desc">Bound books in hand. Distribution at graduation events and the school bookstore. A tangible, beautiful product that families take home.</div>
+    </li>
+  </ol>
+
+  <div class="callout">
+    <strong>The window is tight but achievable.</strong> Once families are notified by Spring Break and submissions close by Easter, most printers can turn around a Wire-O hardcover in 2&ndash;4 weeks. That gives us a clear path to books in hand before Tom leaves.
+  </div>
+
+  <!-- ═══════════════ FAMILY DISCOUNT ═══════════════ -->
+  <div class="section-divider"><span>Family Pricing</span></div>
+
+  <h2>Pricing for Participating Families</h2>
+  <p>Every one of the 93 families that contributes recipes or dedications receives a <strong>40% discount</strong> on up to 2 copies of the finished book. The third copy and any additional copies are at full retail price.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Copy</th>
+          <th>Family Price (40% Off)</th>
+          <th>Full Retail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1st copy</td>
+          <td class="cost">$39&ndash;$51 (depending on retail)</td>
+          <td>$65&ndash;$85</td>
+        </tr>
+        <tr>
+          <td>2nd copy</td>
+          <td class="cost">$39&ndash;$51 (same discount)</td>
+          <td>$65&ndash;$85</td>
+        </tr>
+        <tr>
+          <td>3rd copy+</td>
+          <td style="color:var(--text-light);">No discount</td>
+          <td class="cost">$65&ndash;$85</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Books sold at the school bookstore, alumni events, and fundraisers are at <strong>full retail price</strong>, maximizing the fundraising margin on every additional copy.</p>
+
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="packet-footer">
+  <div class="footer-logo">Wick Cooks</div>
+  <p>Brunswick School &nbsp;&bull;&nbsp; Class of 2015 &nbsp;&bull;&nbsp; Cookbook Fundraiser &nbsp;&bull;&nbsp; February 2026</p>
+</div>
+
+</div>
+</body>
+</html>
