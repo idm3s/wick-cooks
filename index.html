@@ -777,6 +777,63 @@
     .packet { box-shadow: none; }
     section { page-break-inside: avoid; }
   }
+
+  /* ── Collapsible Detail Sections ── */
+  details.expand-section {
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  details.expand-section summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    background: var(--cream);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-med);
+    list-style: none;
+    user-select: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  details.expand-section summary::-webkit-details-marker { display: none; }
+  details.expand-section summary::before {
+    content: '\25B6';
+    font-size: 0.6rem;
+    color: var(--gold);
+    transition: transform 0.2s;
+  }
+  details.expand-section[open] summary::before {
+    transform: rotate(90deg);
+  }
+  details.expand-section summary:hover {
+    background: var(--cream-dark);
+  }
+  details.expand-section .expand-body {
+    padding: 20px 24px;
+  }
+  details.expand-section .expand-body p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  details.expand-section .expand-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brown-dark);
+    margin: 18px 0 8px;
+  }
+  details.expand-section .expand-body h4:first-child {
+    margin-top: 0;
+  }
 </style>
 </head>
 <body>
@@ -820,7 +877,7 @@
   <div style="text-align:center;">
     <div class="tagline">A Cookbook Fundraiser for the Ages</div>
     <div class="subtitle">Conceived by Lynn May &amp; Faten Hindy &nbsp;&bull;&nbsp; With the aid of their sons</div>
-    <span class="badge">Presentation Packet &mdash; February 2026</span>
+    <span class="badge">Presentation Packet &mdash; March 2026</span>
   </div>
 </div>
 
@@ -833,16 +890,16 @@
       <div class="label">Families</div>
     </div>
     <div class="stat-cell">
+      <div class="number">$550</div>
+      <div class="label">Per Family</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">$50K</div>
+      <div class="label">Goal</div>
+    </div>
+    <div class="stat-cell">
       <div class="number">2015</div>
       <div class="label">Class Year</div>
-    </div>
-    <div class="stat-cell">
-      <div class="number">$25&ndash;$50</div>
-      <div class="label">Per Page</div>
-    </div>
-    <div class="stat-cell">
-      <div class="number">Spring</div>
-      <div class="label">Target</div>
     </div>
   </div>
 
@@ -850,9 +907,9 @@
   <div class="section-divider"><span>The Vision</span></div>
 
   <h2>Breaking Bread, Building Legacy</h2>
-  <p>The Brunswick School Class of 2015 has always found its way back to the table. From class snacks in lower school to the snack bar in middle school. From food fairs and fundraisers to team dinners and the warmth of a friend's kitchen after practice. Our class found something rare in a world that moves too fast &mdash; <strong>we slowed down to eat together</strong>.</p>
+  <p>The Brunswick School Class of 2015 has always found its way back to the table. Whether it was class snacks in lower school, the snack bar in middle school, Corbo&rsquo;s filled lunches, the senior snack lounge binges, food fairs and fundraisers, team dinners, or just the warmth of a friend&rsquo;s kitchen after practice &mdash; food was at the very center of our Brunswick living experience. Our class found something rare in a world that moves too fast: <strong>we slowed down to eat together</strong>.</p>
   <p><strong>Wick Cooks</strong> turns that tradition into something permanent: a hardcover, coffee-table-quality cookbook featuring the family recipes of all 93 graduating families. Each family contributes their signature dishes &mdash; <em>Hindy Family Flank Steak, May Lemon Bars</em> &mdash; alongside dedication pages that tell the stories behind the food: when it was most enjoyed, why it matters, and who it reminds them of.</p>
-  <p>This is not just a cookbook. It is a fundraiser for Brunswick, a reunion of flavors, and a lasting tribute to the people who shaped our class.</p>
+  <p>This is not just a cookbook. It is a fundraiser with a <strong>$50,000 goal</strong>, a reunion of flavors, and a lasting tribute to the people who shaped our class. Because of how Headmaster Phillip represented our school, made us feel a part of the tapestry, and carried on its ambition as fearless leader &mdash; some of the guys from 2015 feel it is only right to come together and support him in his leaving. This is our generous and eager spirit of giving, as an ode and a set of living investments that create the most valuable thing in life: pure, loving, life-filled memories.</p>
 
   <div class="callout">
     <strong>The Team:</strong> Lynn May &amp; Faten Hindy (co-founders &amp; project leads), with the aid of their sons &mdash; Sam (design &amp; mock-ups) and Matt (alumni connections &amp; outreach).
@@ -973,307 +1030,404 @@
   <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
   <div class="section-divider"><span>How It Works</span></div>
 
-  <h2>Two Types of Pages, One Beautiful Book</h2>
-  <p>Each of the 93 families is invited to contribute recipes and dedications. Families may purchase as few or as many pages as they wish. This model raises funds through the page contributions themselves, with additional revenue from book sales.</p>
+  <h2>$550 Per Family &mdash; Here&rsquo;s What You Get</h2>
+  <p>Each of the 93 families is invited to participate with a <strong>$550 contribution</strong>. That single number covers everything &mdash; your pages in the book and two copies to keep.</p>
 
   <div class="price-cards">
     <div class="price-card">
-      <div class="card-type">Page Type A</div>
-      <div class="card-name">Recipe Page</div>
-      <div class="card-price">$25 &ndash; $35</div>
-      <div class="card-desc">A full page featuring a family recipe with a title like <em>&ldquo;Hindy Family Flank Steak&rdquo;</em> or <em>&ldquo;May Lemon Bars.&rdquo;</em> Includes the recipe, a family photo or food image, and the family name.</div>
+      <div class="card-type">Included</div>
+      <div class="card-name">Your $550 Covers</div>
+      <div class="card-price">$550</div>
+      <div class="card-desc"><strong>2 Recipe Pages</strong> &mdash; your family&rsquo;s signature dishes (like <em>&ldquo;Hindy Family Flank Steak&rdquo;</em> or <em>&ldquo;May Lemon Bars&rdquo;</em>).<br><strong>1 Dedication Page</strong> &mdash; photos, a story behind the dish, a tribute to what the meal means to your family.<br><strong>2 Copies of the Book</strong> &mdash; one for your home, one to gift.</div>
     </div>
     <div class="price-card">
-      <div class="card-type">Page Type B</div>
-      <div class="card-name">Dedication Page</div>
-      <div class="card-price">$50</div>
-      <div class="card-desc">A personal page with a write-up, photos (old or new), and a story about the dish, when it was most enjoyed, or a tribute to what the meal means to the family. A keepsake.</div>
+      <div class="card-type">Want More?</div>
+      <div class="card-name">Additional Pages</div>
+      <div class="card-price">$25 &ndash; $50</div>
+      <div class="card-desc"><strong>Extra Recipe Pages:</strong> $25 each<br><strong>Extra Dedication Pages:</strong> $50 each<br><strong>Additional Book Copies:</strong> Full retail price<br><br>The book will also feature creative touches &mdash; like note space for recipe edits and space to jot down memories.</div>
     </div>
   </div>
 
   <div class="callout">
-    <strong>Expected range per family:</strong> 1&ndash;3 recipe pages + 1&ndash;2 dedication pages. This gives each family a total contribution of <strong>$25&ndash;$205</strong>, keeping participation accessible while allowing those who want to contribute more a way to do so.
+    <strong>The bottom line:</strong> $550 per family. 93 families. <strong>$50,000 goal.</strong> The first thought was $1,000 a family &mdash; we cut it nearly in half. This covers the cookbook, production costs, and leaves real money for a lasting gift to Brunswick.
   </div>
 
   <!-- ═══════════════ COST ANALYSIS ═══════════════ -->
   <div class="section-divider"><span>Production Costs</span></div>
 
   <h2>What It Costs to Print This Book</h2>
-  <p>The cost to produce each copy depends on two variables: <strong>how many pages</strong> the final book contains (driven by family participation) and <strong>how many copies</strong> are printed. Below are estimates for a hardcover, Wire-O bound, full-color, glossy-page cookbook at 8.5&Prime;&times;11&Prime;.</p>
+  <p>With each family contributing $550, we know our budget up front. Here&rsquo;s what the printing looks like for a hardcover, Wire-O bound, full-color, glossy-page cookbook at 8.5&Prime;&times;11&Prime;.</p>
 
-  <h3>How Page Count Is Estimated</h3>
+  <h3>Page Count</h3>
+  <p>At the baseline (2 recipes + 1 dedication per family, plus front/back matter and dividers), the book comes in around <strong>310&ndash;320 pages</strong>. Families who add extra pages could push it higher, but this is our working estimate.</p>
+
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>Assumption</th>
-          <th>Low End</th>
-          <th>High End</th>
+          <th>What Goes In</th>
+          <th>Pages</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Recipe pages (93 families &times; 1&ndash;3 each)</td>
-          <td>93 pages</td>
-          <td>279 pages</td>
+          <td>Recipe pages (93 families &times; 2 each)</td>
+          <td class="cost">186</td>
         </tr>
         <tr>
-          <td>Dedication pages (93 families &times; 1&ndash;2 each)</td>
-          <td>93 pages</td>
-          <td>186 pages</td>
+          <td>Dedication pages (93 families &times; 1 each)</td>
+          <td class="cost">93</td>
         </tr>
         <tr>
-          <td>Front &amp; back matter, dividers, emblem pages</td>
-          <td>~30 pages</td>
-          <td>~35 pages</td>
+          <td>Front &amp; back matter, dividers, emblem, dedication to Tom</td>
+          <td class="cost">~35</td>
         </tr>
         <tr>
-          <td><strong>Estimated Total Book Pages</strong></td>
-          <td class="cost"><strong>~216 pages</strong></td>
-          <td class="cost"><strong>~500 pages</strong></td>
+          <td><strong>Estimated Total</strong></td>
+          <td class="cost"><strong>~314 pages</strong></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3>Per-Book Printing Cost</h3>
-  <p>Based on quotes from US-based specialty printers (Gorham Printing, Morris Press, PrintingCenterUSA, and others) for hardcover Wire-O, full-color, coated stock:</p>
+  <h3>Printing Cost Estimate</h3>
+  <p>Based on quotes from US-based specialty cookbook printers. Each family&rsquo;s $550 includes 2 copies, so we need at least <strong>186 copies</strong> just for participating families &mdash; plus extras for outside sales.</p>
 
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>Page Count</th>
-          <th>100 Copies</th>
-          <th>200 Copies</th>
-          <th>300 Copies</th>
-          <th>500 Copies</th>
+          <th>Print Run</th>
+          <th>Cost Per Book</th>
+          <th>Total Print Cost</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>~200 pages</strong></td>
-          <td class="cost">$30&ndash;$45</td>
-          <td class="cost">$25&ndash;$38</td>
-          <td class="cost">$22&ndash;$34</td>
-          <td class="cost highlight">$18&ndash;$28</td>
+          <td><strong>200 copies</strong> (families only)</td>
+          <td class="cost">~$36&ndash;$52</td>
+          <td class="cost">~$7,200&ndash;$10,400</td>
         </tr>
         <tr>
-          <td><strong>~300 pages</strong></td>
-          <td class="cost">$42&ndash;$60</td>
-          <td class="cost">$36&ndash;$52</td>
-          <td class="cost">$32&ndash;$46</td>
-          <td class="cost highlight">$26&ndash;$38</td>
-        </tr>
-        <tr>
-          <td><strong>~400 pages</strong></td>
-          <td class="cost">$54&ndash;$75</td>
-          <td class="cost">$47&ndash;$65</td>
-          <td class="cost">$42&ndash;$58</td>
-          <td class="cost highlight">$34&ndash;$48</td>
-        </tr>
-        <tr>
-          <td><strong>~500 pages</strong></td>
-          <td class="cost">$65&ndash;$90</td>
-          <td class="cost">$56&ndash;$78</td>
-          <td class="cost">$50&ndash;$70</td>
-          <td class="cost highlight">$42&ndash;$58</td>
+          <td><strong>300 copies</strong> (families + bookstore stock)</td>
+          <td class="cost highlight">~$32&ndash;$46</td>
+          <td class="cost highlight">~$9,600&ndash;$13,800</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="callout">
-    <strong>Sweet spot:</strong> At <strong>300 copies</strong>, costs drop 25&ndash;35% vs. 100 copies. At <strong>500 copies</strong>, costs drop 35&ndash;40%. A 300-page book at 300 copies costs roughly <strong>$32&ndash;$46 per book</strong> to produce, giving strong margin for a $65&ndash;$85 retail price.
+    <strong>Our target:</strong> A print run of <strong>~300 copies</strong> hits the sweet spot &mdash; enough for every family to get their two included books, plus about 100 extra copies for the school bookstore, alumni events, and additional sales. At ~$32&ndash;$46 per book, that puts total printing at roughly <strong>$10,000&ndash;$14,000</strong>.
   </div>
 
-  <h3>Total Print Run Costs</h3>
-  <p>Multiply per-book cost by quantity. These are the total checks you would write to the printer:</p>
+  <details class="expand-section">
+    <summary>Click to See the Full Printing Cost Breakdown</summary>
+    <div class="expand-body">
+      <p>These estimates are based on quotes from US-based specialty cookbook printers for a <strong>~314-page, hardcover, Wire-O bound, full-color, glossy-page cookbook</strong> at 8.5&Prime;&times;11&Prime;. Costs vary by printer, paper stock, and run size.</p>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Page Count</th>
-          <th>100 Copies</th>
-          <th>200 Copies</th>
-          <th>300 Copies</th>
-          <th>500 Copies</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>~200 pages</strong></td>
-          <td class="cost">$3,000&ndash;$4,500</td>
-          <td class="cost">$5,000&ndash;$7,600</td>
-          <td class="cost">$6,600&ndash;$10,200</td>
-          <td class="cost">$9,000&ndash;$14,000</td>
-        </tr>
-        <tr>
-          <td><strong>~300 pages</strong></td>
-          <td class="cost">$4,200&ndash;$6,000</td>
-          <td class="cost">$7,200&ndash;$10,400</td>
-          <td class="cost">$9,600&ndash;$13,800</td>
-          <td class="cost">$13,000&ndash;$19,000</td>
-        </tr>
-        <tr>
-          <td><strong>~400 pages</strong></td>
-          <td class="cost">$5,400&ndash;$7,500</td>
-          <td class="cost">$9,400&ndash;$13,000</td>
-          <td class="cost">$12,600&ndash;$17,400</td>
-          <td class="cost">$17,000&ndash;$24,000</td>
-        </tr>
-        <tr>
-          <td><strong>~500 pages</strong></td>
-          <td class="cost">$6,500&ndash;$9,000</td>
-          <td class="cost">$11,200&ndash;$15,600</td>
-          <td class="cost">$15,000&ndash;$21,000</td>
-          <td class="cost">$21,000&ndash;$29,000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <h4>Per-Book Cost by Print Run Size</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Print Run</th>
+              <th>100 Copies</th>
+              <th>200 Copies</th>
+              <th>300 Copies</th>
+              <th>500 Copies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>~300 pages</strong> (our estimate)</td>
+              <td class="cost">$42&ndash;$60</td>
+              <td class="cost">$36&ndash;$52</td>
+              <td class="cost highlight">$32&ndash;$46</td>
+              <td class="cost">$26&ndash;$38</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>At 300 copies, costs drop <strong>25&ndash;35%</strong> compared to 100 copies. Going to 500 drops another 10%, but 300 is the sweet spot for our class size.</p>
+
+      <h4>Total Print Run Cost (What We&rsquo;d Write the Check For)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Print Run</th>
+              <th>Total Cost</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>200 copies</strong></td>
+              <td class="cost">$7,200&ndash;$10,400</td>
+              <td>Covers families only (93 &times; 2 = 186 books)</td>
+            </tr>
+            <tr>
+              <td><strong>300 copies</strong> &nbsp;&#9733;</td>
+              <td class="cost highlight">$9,600&ndash;$13,800</td>
+              <td>Our target &mdash; families + ~114 for bookstore/alumni sales</td>
+            </tr>
+            <tr>
+              <td><strong>500 copies</strong></td>
+              <td class="cost">$13,000&ndash;$19,000</td>
+              <td>Only if demand is very strong or other classes want copies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Recommended Printers</h4>
+      <p>These companies specialize in short-run, high-quality cookbook printing:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Printer</th>
+              <th>Location</th>
+              <th>Why They Fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Morris Press Cookbooks</strong></td>
+              <td>Kearney, NE</td>
+              <td>Nation&rsquo;s largest cookbook printer since 1933. Full-color hardback on 80 lb gloss. <strong>Built for fundraisers.</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Gorham Printing</strong></td>
+              <td>Centralia, WA</td>
+              <td>Transparent pricing. Wire-O and hardcover options. In-house US printing. Minimum 25 copies.</td>
+            </tr>
+            <tr>
+              <td><strong>PrintingCenterUSA</strong></td>
+              <td>Great Falls, MT</td>
+              <td>Wire-O binding. Instant online quote calculator. Digital &amp; offset options.</td>
+            </tr>
+            <tr>
+              <td><strong>Dazzle Printing</strong></td>
+              <td>Online</td>
+              <td>25-copy minimum. 20% off first order + nonprofit discounts. Rush options available.</td>
+            </tr>
+            <tr>
+              <td><strong>PrintNinja</strong></td>
+              <td>Online</td>
+              <td>Offset printing for vibrant color. Known for cookbooks and coffee table books.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Our recommendation:</strong> Start with Morris Press (built for fundraiser cookbooks) and Gorham (transparent pricing). Get a third quote from PrintingCenterUSA for comparison.</p>
+    </div>
+  </details>
 
   <!-- ═══════════════ REVENUE PROJECTIONS ═══════════════ -->
-  <div class="section-divider"><span>Revenue Projections</span></div>
+  <div class="section-divider"><span>The Math</span></div>
 
-  <h2>How Much Could This Raise?</h2>
-
-  <h3>Revenue Source 1: Page Contributions</h3>
-  <p>Funds raised simply from families purchasing their recipe and dedication pages:</p>
+  <h2>How We Reach $50,000</h2>
+  <p>The beauty of the $550 model is its simplicity. Here&rsquo;s exactly how the money flows:</p>
 
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>Scenario</th>
-          <th>Recipes Sold</th>
-          <th>Dedications Sold</th>
-          <th>Revenue</th>
+          <th>Source</th>
+          <th>How It Works</th>
+          <th style="background:var(--gold-dim); color:var(--brown-dark);">Amount</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Conservative</strong><br><span style="font-size:0.75rem; color:var(--text-light);">1 recipe @ $25 + 1 dedication @ $50 per family</span></td>
-          <td>93 pages</td>
-          <td>93 pages</td>
-          <td class="cost"><strong>$6,975</strong></td>
+          <td><strong>Family Contributions</strong></td>
+          <td>93 families &times; $550 each</td>
+          <td class="cost"><strong>$51,150</strong></td>
         </tr>
         <tr>
-          <td><strong>Moderate</strong><br><span style="font-size:0.75rem; color:var(--text-light);">2 recipes @ $30 + 1 dedication @ $50 per family</span></td>
-          <td>186 pages</td>
-          <td>93 pages</td>
-          <td class="cost"><strong>$10,230</strong></td>
+          <td><strong>Printing Costs</strong></td>
+          <td>~300 copies at ~$32&ndash;$46 per book</td>
+          <td style="color:#8a4a3a; font-weight:700;">(&ndash;$10,000 to &ndash;$14,000)</td>
         </tr>
         <tr>
-          <td><strong>Optimistic</strong><br><span style="font-size:0.75rem; color:var(--text-light);">3 recipes @ $35 + 2 dedications @ $50 per family</span></td>
-          <td>279 pages</td>
-          <td>186 pages</td>
-          <td class="cost"><strong>$19,065</strong></td>
+          <td><strong>Net Funds Raised</strong></td>
+          <td>What goes directly to Brunswick</td>
+          <td class="cost" style="font-size:1.1rem;"><strong>~$37,000&ndash;$41,000</strong></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3>Revenue Source 2: Book Sales</h3>
-  <p>Additional revenue from selling copies. The 93 participating families receive a <strong>40% discount</strong> on up to 2 copies. Third copy and beyond is full price. Outside sales (alumni, bookstore, fundraisers) are full price.</p>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Scenario</th>
-          <th>Retail Price</th>
-          <th>Family Copies (40% off)</th>
-          <th>Outside Sales</th>
-          <th>Book Revenue</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Conservative</strong></td>
-          <td>$65</td>
-          <td>130 copies @ $39</td>
-          <td>20 copies @ $65</td>
-          <td class="cost"><strong>$6,370</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Moderate</strong></td>
-          <td>$75</td>
-          <td>150 copies @ $45</td>
-          <td>50 copies @ $75</td>
-          <td class="cost"><strong>$10,500</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Optimistic</strong></td>
-          <td>$85</td>
-          <td>186 copies @ $51</td>
-          <td>100 copies @ $85</td>
-          <td class="cost"><strong>$17,986</strong></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="callout">
+    <strong>That&rsquo;s before any extra sales.</strong> The ~100 additional copies in the print run can be sold at full retail ($65&ndash;$85 each) through the school bookstore, alumni events, and fundraisers. If all 100 sell, that&rsquo;s another <strong>$6,500&ndash;$8,500</strong> &mdash; easily pushing us past the <strong>$50,000 goal</strong>.
   </div>
 
-  <h3>Combined Fundraising Totals</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Scenario</th>
-          <th>Page Revenue</th>
-          <th>Book Revenue</th>
-          <th>Print Cost</th>
-          <th style="background:var(--gold-dim); color:var(--brown-dark);">Net Raised</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Conservative</strong></td>
-          <td>$6,975</td>
-          <td>$6,370</td>
-          <td>($6,600)</td>
-          <td class="cost"><strong>$6,745</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Moderate</strong></td>
-          <td>$10,230</td>
-          <td>$10,500</td>
-          <td>($10,400)</td>
-          <td class="cost"><strong>$10,330</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Optimistic</strong></td>
-          <td>$19,065</td>
-          <td>$17,986</td>
-          <td>($15,600)</td>
-          <td class="cost"><strong>$21,451</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <details class="expand-section">
+    <summary>Click to See the Full $550 &amp; Revenue Math</summary>
+    <div class="expand-body">
+      <h4>Why $550?</h4>
+      <p>The original idea was <strong>$1,000 per family</strong> to cover the cookbook and fund a scholarship. We cut it nearly in half to keep it accessible while still hitting our goal:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Line Item</th>
+              <th>Per Family</th>
+              <th>What It Covers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2 Recipe Pages</td>
+              <td class="cost">~$50</td>
+              <td>$25 each &mdash; your family&rsquo;s signature dishes in the book</td>
+            </tr>
+            <tr>
+              <td>1 Dedication Page</td>
+              <td class="cost">~$50</td>
+              <td>Photos, stories, and a tribute to what the meal means to your family</td>
+            </tr>
+            <tr>
+              <td>2 Book Copies</td>
+              <td class="cost">~$70&ndash;$90</td>
+              <td>One for you, one to gift (at production cost ~$35&ndash;$45 each)</td>
+            </tr>
+            <tr>
+              <td>Donation to Brunswick</td>
+              <td class="cost">~$360&ndash;$380</td>
+              <td>The remainder goes directly toward our class gift</td>
+            </tr>
+            <tr style="background: rgba(201,168,76,0.08);">
+              <td><strong>Total</strong></td>
+              <td class="cost" style="font-size:1.1rem;"><strong>$550</strong></td>
+              <td><strong>One number, everything included</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Revenue From Book Sales (Beyond the 93 Families)</h4>
+      <p>The extra ~100 copies in our 300-book print run can be sold at full retail through the school bookstore, alumni events, and fundraisers:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Copies Sold</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Conservative (retail $65)</td>
+              <td>50 copies</td>
+              <td class="cost">$3,250</td>
+            </tr>
+            <tr>
+              <td>Moderate (retail $75)</td>
+              <td>75 copies</td>
+              <td class="cost">$5,625</td>
+            </tr>
+            <tr>
+              <td>Strong (retail $85)</td>
+              <td>100 copies</td>
+              <td class="cost highlight">$8,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Extra Page Purchases (Pure Upside)</h4>
+      <p>Some families will want more than the baseline 2 recipes and 1 dedication. Every additional page is bonus revenue:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>If Families Add&hellip;</th>
+              <th>Extra Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20 families add 1 extra recipe ($25 each)</td>
+              <td class="cost">+$500</td>
+            </tr>
+            <tr>
+              <td>15 families add 1 extra dedication ($50 each)</td>
+              <td class="cost">+$750</td>
+            </tr>
+            <tr>
+              <td>10 families buy a 3rd book copy (~$75 each)</td>
+              <td class="cost">+$750</td>
+            </tr>
+            <tr style="background: rgba(201,168,76,0.08);">
+              <td><strong>Potential bonus revenue</strong></td>
+              <td class="cost"><strong>+$2,000+</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Full Picture: Path to $50,000</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th style="background:var(--gold-dim); color:var(--brown-dark);">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>93 families &times; $550</td>
+              <td class="cost">$51,150</td>
+            </tr>
+            <tr>
+              <td>Printing costs (~300 books)</td>
+              <td style="color:#8a4a3a; font-weight:700;">&ndash;$10,000 to &ndash;$14,000</td>
+            </tr>
+            <tr>
+              <td>Bookstore &amp; alumni book sales (50&ndash;100 copies)</td>
+              <td class="cost">+$3,250 to +$8,500</td>
+            </tr>
+            <tr>
+              <td>Extra page purchases</td>
+              <td class="cost">+$2,000+</td>
+            </tr>
+            <tr style="background: rgba(201,168,76,0.08);">
+              <td><strong>Estimated Total Raised</strong></td>
+              <td class="cost" style="font-size:1.1rem;"><strong>$42,000&ndash;$48,000+</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>With strong participation and solid book sales, we clear <strong>$50,000</strong>.</p>
+    </div>
+  </details>
 
   <!-- ═══════════════ IMPACT TIERS ═══════════════ -->
   <div class="section-divider"><span>What the Funds Could Become</span></div>
 
-  <h2>Tiered Impact Goals</h2>
-  <p>Depending on the total amount raised, the fundraiser unlocks different levels of lasting impact for Brunswick:</p>
+  <h2>Where the Money Goes</h2>
+  <p>With a target of $50,000 and production costs covered, the Class of 2015 has a real opportunity to leave a lasting mark on Brunswick. Here&rsquo;s what our class can confer together:</p>
 
   <div class="tier-cards">
     <div class="tier-card tier-bronze">
-      <div class="tier-label">If We Raise $5,000&ndash;$10,000</div>
-      <h4>A Dedication &amp; Equipment Gift</h4>
-      <p>A meaningful contribution to the school &mdash; perhaps a dedicated bench, a piece of equipment for a team, or a named gift to a department that shaped us. Something permanent with a plaque.</p>
+      <div class="tier-label">The Cookbook Itself</div>
+      <h4>A Living Memory</h4>
+      <p>The book is the first investment &mdash; a yearbook-style keepsake that commemorates our class, the meals we shared, and the people who made Brunswick home. Every family that opens it relives those dinners, those kitchens, those years.</p>
     </div>
     <div class="tier-card tier-silver">
-      <div class="tier-label">If We Raise $10,000&ndash;$20,000</div>
-      <h4>A Dedication to Tom Phillip</h4>
-      <p>A commissioned statue, portrait, or lasting tribute honoring Tom Phillip &mdash; placed somewhere on the Brunswick campus where future classes can know his name and his spirit.</p>
+      <div class="tier-label">The Next Step</div>
+      <h4>Advancing Brunswick</h4>
+      <p>The current thinking: use the funds to help bring <strong>AI capabilities into the school curriculum</strong>, or another advancement that our class decides on together. Something forward-looking that matches the spirit of a school that has always pushed its students to lead.</p>
     </div>
     <div class="tier-card tier-gold">
-      <div class="tier-label">If We Raise $20,000+</div>
-      <h4>The Tom Phillip Scholarship</h4>
-      <p>An endowed scholarship in Tom&rsquo;s name, awarded annually to a Brunswick student. <strong>The dream outcome.</strong> If Wick Cooks becomes a template that other graduating classes adopt &mdash; each year running their own fundraising vector &mdash; the scholarship could become self-sustaining and grow over time.</p>
+      <div class="tier-label">The Dream</div>
+      <h4>A Legacy Beyond Our Class</h4>
+      <p>If Wick Cooks becomes a template &mdash; if other graduating classes run their own fundraising vector &mdash; the impact compounds. A scholarship fund, a permanent endowment, a tradition that grows. <strong>It starts with 93 families saying yes.</strong></p>
     </div>
   </div>
 
@@ -1282,48 +1436,13 @@
 
   <div class="dedication-box">
     <div class="ded-overline">This Book Is Dedicated To</div>
-    <h3>Tom Phillip</h3>
+    <h3>Headmaster Tom Phillip</h3>
     <div class="ded-line"></div>
-    <p>Tom is part of the tapestry that is Brunswick School. His presence has defined our hallways, our fields, and our gatherings. How dearly he will be missed, and how the school will never be the same.</p>
-    <p>Wick Cooks carries his name in its heart. Every recipe shared, every story told, every page turned is a way of honoring the people who make our community what it is &mdash; and the table is always better when everyone has a seat.</p>
+    <p>With all our getting, we hope we got understanding. And that means knowing when it is time to joyously step up and send off someone with the orbit of Headmaster Tom Phillip.</p>
+    <p>Think of nearly four decades of unprecedented growth. Think of the physical footprint of the school as it stamps itself across the beautiful landscapes of Greenwich. Think of all the meetings, the extracurriculars, the announcements &mdash; all that he managed, all that he showed up for, the high standard he lived by, and how he did so with the utmost consistency.</p>
+    <p>One moment, microcosmic of who he was: in the wake of Hurricane Sandy, the world amiss, roads lined with debris and downed trees &mdash; there on the side of the road was this grey figure, lumbering through snow and mess. Running. Maintaining routine when the world had lost its. The only thing missing on him was that patented red line on the body of his jacket.</p>
+    <p>He is part of the tapestry that is Brunswick School. He made us feel a part of it, and carried on its ambition as fearless leader. Every recipe shared in this book, every story told, every page turned is a way of honoring the people who make our community what it is.</p>
     <p style="color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; margin-top: 16px;">The final book will feature a full dedication page in Tom&rsquo;s honor.</p>
-  </div>
-
-  <!-- ═══════════════ PRINTING PARTNERS ═══════════════ -->
-  <div class="section-divider"><span>Recommended Printers</span></div>
-
-  <h2>Trusted Printing Partners</h2>
-  <p>These companies specialize in short-run, high-quality cookbook and hardcover printing. We recommend requesting quotes from at least three for an apples-to-apples comparison.</p>
-
-  <ol class="printer-list">
-    <li>
-      <div class="printer-name">Gorham Printing</div>
-      <div class="printer-detail">Centralia, WA &nbsp;&bull;&nbsp; gorhamprinting.com &nbsp;&bull;&nbsp; Transparent pricing, Wire-O and hardcover options. In-house US printing. Minimum 25 copies.</div>
-    </li>
-    <li>
-      <div class="printer-name">Morris Press Cookbooks</div>
-      <div class="printer-detail">Kearney, NE &nbsp;&bull;&nbsp; morriscookbooks.com &nbsp;&bull;&nbsp; Nation&rsquo;s largest cookbook printer since 1933. Full-color hardback on 80 lb gloss. Built for fundraisers.</div>
-    </li>
-    <li>
-      <div class="printer-name">PrintingCenterUSA</div>
-      <div class="printer-detail">Great Falls, MT &nbsp;&bull;&nbsp; printingcenterusa.com &nbsp;&bull;&nbsp; Wire-O binding, instant online quote calculator. Digital &amp; offset options.</div>
-    </li>
-    <li>
-      <div class="printer-name">Dazzle Printing</div>
-      <div class="printer-detail">dazzleprinting.com &nbsp;&bull;&nbsp; 25-copy minimum, Wire-O available. 20% off first order + nonprofit discounts. Rush options available.</div>
-    </li>
-    <li>
-      <div class="printer-name">PrintNinja</div>
-      <div class="printer-detail">printninja.com &nbsp;&bull;&nbsp; Offset printing for vibrant color. Known for cookbooks and coffee table books. Competitive at 250+ copies.</div>
-    </li>
-    <li>
-      <div class="printer-name">QinPrinting</div>
-      <div class="printer-detail">qinprinting.com &nbsp;&bull;&nbsp; Wire-O hardcover as a named product. Full-color offset. Online quoting. 2&ndash;3 week production.</div>
-    </li>
-  </ol>
-
-  <div class="callout">
-    <strong>Top recommendation for this project:</strong> Start with <strong>Morris Press Cookbooks</strong> (built specifically for fundraiser cookbooks) and <strong>Gorham Printing</strong> (transparent pricing, high quality). Get a third quote from <strong>PrintingCenterUSA</strong> or <strong>Dazzle</strong> for comparison.
   </div>
 
   <!-- ═══════════════ TIMELINE ═══════════════ -->
@@ -1333,78 +1452,104 @@
 
   <ol class="timeline">
     <li>
-      <div class="step-icon">FEB</div>
-      <div class="step-date">Now &mdash; Early March</div>
+      <div class="step-icon">MAR</div>
+      <div class="step-date">Now &mdash; Early April</div>
       <div class="step-title">Finalize Packet &amp; Lock Printer</div>
       <div class="step-desc">Approve this presentation, choose a cover direction, and send specs to 2&ndash;3 printers for final quotes. Lock in the printing partner.</div>
     </li>
     <li>
-      <div class="step-icon">MAR</div>
-      <div class="step-date">By Spring Break</div>
+      <div class="step-icon">APR</div>
+      <div class="step-date">By Late April</div>
       <div class="step-title">Launch &amp; Notify Families</div>
       <div class="step-desc">Official announcement to all 93 families. &ldquo;Our class is doing this.&rdquo; Distribute the recipe submission form, the dedication page order form, and the payment link.</div>
     </li>
     <li>
-      <div class="step-icon">APR</div>
-      <div class="step-date">By Easter</div>
+      <div class="step-icon">MAY</div>
+      <div class="step-date">By Late May</div>
       <div class="step-title">Recipes &amp; Registrations Due</div>
       <div class="step-desc">All recipe submissions, dedication page orders, and ad commitments collected. Design and layout begin immediately after.</div>
     </li>
     <li>
-      <div class="step-icon">MAY</div>
-      <div class="step-date">By Graduation</div>
+      <div class="step-icon">JUN</div>
+      <div class="step-date">By End of June</div>
       <div class="step-title">Books Printed &amp; Delivered</div>
       <div class="step-desc">Bound books in hand. Distribution at graduation events and the school bookstore. A tangible, beautiful product that families take home.</div>
     </li>
   </ol>
 
   <div class="callout">
-    <strong>The window is tight but achievable.</strong> Once families are notified by Spring Break and submissions close by Easter, most printers can turn around a Wire-O hardcover in 2&ndash;4 weeks. That gives us a clear path to books in hand before Tom leaves.
+    <strong>The timeline is achievable.</strong> Once families are notified in April and submissions close by late May, most printers can turn around a Wire-O hardcover in 2&ndash;4 weeks. That gives us a clear path to books in hand by the end of June.
   </div>
 
-  <!-- ═══════════════ FAMILY DISCOUNT ═══════════════ -->
+  <!-- ═══════════════ FAMILY PRICING ═══════════════ -->
   <div class="section-divider"><span>Family Pricing</span></div>
 
-  <h2>Pricing for Participating Families</h2>
-  <p>Every one of the 93 families that contributes recipes or dedications receives a <strong>40% discount</strong> on up to 2 copies of the finished book. The third copy and any additional copies are at full retail price.</p>
+  <h2>What Your $550 Gets You</h2>
+  <p>Your contribution is all-inclusive. No surprises, no add-ons required.</p>
 
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>Copy</th>
-          <th>Family Price (40% Off)</th>
-          <th>Full Retail</th>
+          <th>Included in $550</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1st copy</td>
-          <td class="cost">$39&ndash;$51 (depending on retail)</td>
-          <td>$65&ndash;$85</td>
+          <td><strong>2 Recipe Pages</strong></td>
+          <td>Your family&rsquo;s signature dishes, beautifully designed with title, recipe, and family name</td>
         </tr>
         <tr>
-          <td>2nd copy</td>
-          <td class="cost">$39&ndash;$51 (same discount)</td>
-          <td>$65&ndash;$85</td>
+          <td><strong>1 Dedication Page</strong></td>
+          <td>Your story, photos (old or new), and a tribute to what the meal means to your family</td>
         </tr>
         <tr>
-          <td>3rd copy+</td>
-          <td style="color:var(--text-light);">No discount</td>
-          <td class="cost">$65&ndash;$85</td>
+          <td><strong>2 Copies of the Book</strong></td>
+          <td>One for your kitchen, one to gift to someone special</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <p>Books sold at the school bookstore, alumni events, and fundraisers are at <strong>full retail price</strong>, maximizing the fundraising margin on every additional copy.</p>
+  <h3>Want More?</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Add-On</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Additional recipe page</td>
+          <td class="cost">$25 each</td>
+        </tr>
+        <tr>
+          <td>Additional dedication page</td>
+          <td class="cost">$50 each</td>
+        </tr>
+        <tr>
+          <td>Additional book copies (3rd+)</td>
+          <td class="cost">Full retail price ($65&ndash;$85)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Books sold at the school bookstore, alumni events, and fundraisers are at <strong>full retail price</strong> &mdash; all proceeds go to the fundraiser mission.</p>
+
+  <div class="callout">
+    <strong>Questions?</strong> Please direct them to the Alumni Department, who can put you in touch with the mother and the sons heading this project.
+  </div>
 
 </div>
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div class="packet-footer">
   <div class="footer-logo">Wick Cooks</div>
-  <p>Brunswick School &nbsp;&bull;&nbsp; Class of 2015 &nbsp;&bull;&nbsp; Cookbook Fundraiser &nbsp;&bull;&nbsp; February 2026</p>
+  <p>Brunswick School &nbsp;&bull;&nbsp; Class of 2015 &nbsp;&bull;&nbsp; Cookbook Fundraiser &nbsp;&bull;&nbsp; March 2026</p>
 </div>
 
 </div>
